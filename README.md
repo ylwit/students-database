@@ -60,7 +60,7 @@ projektu wykonanej przez zespół projektowy.
 		/students-database/src/main/java/pl/wit/studentsdatabase/repository/StudentDataAccess.java
 		/students-database/src/main/java/pl/wit/studentsdatabase/repository/StudentRepository.java
 	
-	## Główny jframe + podział na zakładki dotyczące funkcjonalności (tu Emil też dodał jpanele do zakładek pozostałych niż Studebt):
+	## Główny jframe + podział na zakładki dotyczące funkcjonalności (tu Emil też dodał jpanele do zakładek pozostałych niż Student):
 		/students-database/src/main/java/pl/wit/studentsdatabase/view/MainView.java
 	
 	## Panel do dodawania i wyszukiwania studentów:
@@ -102,3 +102,5 @@ projektu wykonanej przez zespół projektowy.
 	## Dodanie zakładek do MainView.java
 		src/main/java/pl/wit/studentsdatabase/view/StudentsPanelCreatorV2.java
 		src/main/java/pl/wit/studentsdatabase/view/SubjectsPanelCreator.java
+  		src/main/java/pl/wit/studentsdatabase/view/GroupsPanelCreator.java
+
