@@ -1,4 +1,4 @@
-package pl.wit.studentsdatabase.repository;
+package pl.wit.studentsdatabase;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

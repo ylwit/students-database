@@ -18,8 +18,8 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
+import pl.wit.studentsdatabase.FileHandler;
 import pl.wit.studentsdatabase.model.Student;
-import pl.wit.studentsdatabase.repository.FileHandler;
 import pl.wit.studentsdatabase.repository.StudentRepository;
 
 /**

@@ -241,7 +241,7 @@ public class StudentsPanelCreator {
 
             StudentRepository.getInstance().deleteStudentById(studentId);
             updateStudentList();
-            resetFieldsValues();
+            //resetFieldsValues();
         }
     }
 
@@ -300,7 +300,7 @@ public class StudentsPanelCreator {
         displayStudents(students);
     }
 
-    private void displayStudents(List<Student> students) {
+    void displayStudents(List<Student> students) {
         txaStudentList.setText("");
         if (students != null && !students.isEmpty()) {
             for (Student student : students) {

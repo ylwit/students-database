@@ -1,11 +1,7 @@
 package pl.wit.studentsdatabase.view;
 
-import java.util.List;
 
 import javax.swing.*;
-
-import pl.wit.studentsdatabase.model.Student;
-import pl.wit.studentsdatabase.repository.FileHandler;
 
 /**
  * Klasa z ramką do zarządzania zakładkami z panelami
@@ -37,8 +33,8 @@ public class MainView extends JFrame {
         tabbedPane.addTab("Przedmioty", subjectPanel);
 
         // Scores 
-        JPanel scoresPanel = new ScoresPanelCreator().getPanel();
-        tabbedPane.addTab("Wyniki", scoresPanel);
+        //JPanel scoresPanel = new ScoresPanelCreator().getPanel();
+        //tabbedPane.addTab("Wyniki", scoresPanel);
 
         add(tabbedPane);
     }
