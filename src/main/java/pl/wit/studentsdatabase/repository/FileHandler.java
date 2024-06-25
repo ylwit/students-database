@@ -16,7 +16,7 @@ import pl.wit.studentsdatabase.model.Subject;
 
 /**
  * 
- * Klasa obsługująca operacje i/o dla repozytorium studentów
+ * Klasa obsługująca operacje i/o dla repozytoriów
  * 
  * @author Emil Sell
  * 
@@ -27,7 +27,7 @@ public class FileHandler<T> {
 	// scieżka do pliku
 	private String fileName;
 
-	FileHandler(String fileName) {
+	public FileHandler(String fileName) {
 		this.fileName = fileName;
 	}
 
@@ -109,32 +109,6 @@ public class FileHandler<T> {
 		}
 	}
 
-	// dopisanie na końcu nową encję
-	public void append(T entity) {
-		try (DataOutputStream stream = new DataOutputStream(new FileOutputStream(fileName, true))) {
-			write(entity, stream);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	// dopisanie na końcu pliku listy nowych encji
-	public void append(List<T> entities) {
-		try (DataOutputStream stream = new DataOutputStream(new FileOutputStream(fileName, true))) {
-			write(entities, stream);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
 	private Student readStudent(DataInputStream stream) {
 		try {
 			int id = stream.readInt();
@@ -195,20 +169,6 @@ public class FileHandler<T> {
 			e.printStackTrace();
 		}
 		return null;
-	}
-
-	private void write(T entity, DataOutputStream stream) {
-		if (entity.getClass() == Student.class) {
-			writeStudent((Student) entity, stream);
-		} else if (entity.getClass() == Group.class) {
-			writeGroup((Group) entity, stream);
-		} else if (entity.getClass() == Subject.class) {
-			writeSubject((Subject) entity, stream);
-		} else if (entity.getClass() == Score.class) {
-			writeScore((Score) entity, stream);
-		} else {
-			throw new IllegalArgumentException("");
-		}
 	}
 
 	private void write(List<T> entities, DataOutputStream stream) {

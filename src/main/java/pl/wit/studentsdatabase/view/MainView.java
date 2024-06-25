@@ -1,12 +1,18 @@
 package pl.wit.studentsdatabase.view;
 
+import java.util.List;
+
 import javax.swing.*;
+
+import pl.wit.studentsdatabase.model.Student;
+import pl.wit.studentsdatabase.repository.FileHandler;
 
 /**
  * Klasa z ramką do zarządzania zakładkami z panelami
  * 
  * 
  * @author Yuliia Loianich
+ * @coauthor Emil Sell
  * 
  */
 public class MainView extends JFrame {
@@ -17,16 +23,22 @@ public class MainView extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JTabbedPane tabbedPane = new JTabbedPane();
+        
+        // Students
+        JPanel studentsPanel = new StudentsPanelCreatorV2().getPanel();
+        tabbedPane.addTab("Studenci", studentsPanel);        
+        
+        // Groups
+        JPanel groupsPanel = new GroupsPanelCreator().getPanel();
+        tabbedPane.addTab("Grupy", groupsPanel);
+        
+        // Subjects
+        JPanel subjectPanel = new SubjectsPanelCreator().getPanel();
+        tabbedPane.addTab("Przedmioty", subjectPanel);
 
-        // Zakładka "Students"
-        JPanel studentsPanel = new StudentsPanelCreator().getPanel();
-        tabbedPane.addTab("Studenci", studentsPanel);
-
-        // Puste zakładki, które powinny zostać rozbudowane
-        tabbedPane.addTab("Zapis/odczyt z pliku", new JPanel()); // TODO: tu powinien powstać panel dla ładowania i zapisywania danych do pliku
-        tabbedPane.addTab("Grupy", new JPanel()); // TODO: tu powinien powstać panel dla grup
-        tabbedPane.addTab("Przedmioty", new JPanel()); // TODO: tu powinien powstać panel dla przedmiotów
-        tabbedPane.addTab("Wyniki", new JPanel()); // TODO: tu powinien powstać panel dla wyników
+        // Scores 
+        JPanel scoresPanel = new ScoresPanelCreator().getPanel();
+        tabbedPane.addTab("Wyniki", scoresPanel);
 
         add(tabbedPane);
     }
