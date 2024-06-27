@@ -21,6 +21,10 @@ public class MainView extends JFrame {
         JTabbedPane tabbedPane = new JTabbedPane();
         
         // Students
+        JPanel studentsPanel1 = new StudentsPanelCreator().getPanel();
+        tabbedPane.addTab("Students Pierwotny", studentsPanel1);   
+        
+        // Students
         JPanel studentsPanel = new StudentsPanelCreatorV2().getPanel();
         tabbedPane.addTab("Studenci", studentsPanel);        
         
